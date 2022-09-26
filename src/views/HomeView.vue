@@ -1,14 +1,23 @@
 <template>
   <div>
-    <h1>This is Home page</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est itaque voluptatum odit. Ducimus fugiat suscipit esse impedit perspiciatis odio animi, illo repellat consequatur amet similique consectetur atque quos maiores maxime!
-    </p>
+    <!-- NavBar -->
+    <nav-bar/>
+    <!-- Hero Section -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-">
+          <img src="/images/hoodie2.png" alt="">
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+  import NavBar from '@/components/NavBar.vue'
 export default {
-
+   name: 'HomeView',
+   components : {NavBar}
 }
 </script>
 
