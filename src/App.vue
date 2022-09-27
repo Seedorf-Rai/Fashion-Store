@@ -9,6 +9,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 body{
   background-color: #E8E3D9;
+  overflow-x: hidden;
 }
 .logo{
   font-family: 'Montserrat', sans-serif;

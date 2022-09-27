@@ -5,11 +5,13 @@
     <!-- Hero Section -->
     <div class="container-fluid">
       <div class="row">
+        <!-- Left Part Of the Hero Section -->
         <div class="col-md-5  hero-left ">
            <div class="hero-bg-color "></div>
            <div class="hero-right-outline"></div>
           <img src="/images/hoodie2.png" class="hero-img" alt="">
         </div>
+        <!-- Middle Part Of the Hero Section -->
         <div class="col-md-4 hero-mid">
            <div class="d-flex">
             <h1>Feel </h1>
@@ -28,6 +30,13 @@
             <div class="cir-outli">
            <div class="circle"><i class="fa-solid ms-1 fa-arrow-right fa-3x"></i></div></div>
            <p class="ms-4">Discover More</p>
+           </div>
+        </div>
+        <!-- RIght Part OF the Hero Section -->
+        <div class="col-md-3 hero-right">
+           <div class="hero-right-bg">
+          <div class="hero-right-bg-line"></div>
+              <img src="/images/hero-right.png" class="img-fluid" alt="">
            </div>
         </div>
       </div>
@@ -121,6 +130,34 @@ h1{
 .circle:hover{
   position: relative;
   left: 20px;
+  cursor: pointer;
+}
+.hero-right-bg-line{
+  width: 350px;
+  height: 260px;
+  border: 2px solid #52A0E3;
+  position: absolute;
+  top: 30px;
+  left: 26px;
+  transform: skew(12deg);
+}
+.hero-right-bg{
+  width: 350px;
+  height: 260px;
+  background-color: #52A0E3;
+  transform: skew(12deg);
+  position: relative;
+  top: 42%;
+  left: 30%;
+}
+.hero-right-bg img{
+  transform: skew(-12deg);
+  /* display:none; */
+  width: 200px; height: 250px;
+  object-fit: cover;
+  position: relative;
+  left: 38px;
+  top: 10px;
 }
 /* CSS */
 /* .button-18 {
