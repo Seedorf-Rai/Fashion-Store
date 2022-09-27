@@ -12,7 +12,7 @@ body{
 }
 .logo{
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 27px !important;
 }
 .nav-item{
