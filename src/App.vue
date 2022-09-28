@@ -10,6 +10,7 @@
 body{
   background-color: #E8E3D9;
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 .logo{
   font-family: 'Montserrat', sans-serif;
