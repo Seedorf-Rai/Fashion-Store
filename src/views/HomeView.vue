@@ -12,7 +12,7 @@
         <div class="line"></div>
       </div>
       <h2 class="text-center h-i-s">How it all started</h2>
-      <div class="row py-4 g-4">
+      <div class="row py-5 g-4">
         <div class="col-md-6">
           Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.[1] The term implies a look defined by the fashion industry as that which is trending. Everything that is considered fashion is available and popularized by the fashion system (industry and media).
           <br class="my-2"/>
