@@ -12,7 +12,7 @@
         <div class="line"></div>
       </div>
       <h2 class="text-center h-i-s">How it all started</h2>
-      <div class="row py-5 g-4">
+      <div class="row py-5 ps-5 g-4">
         <div class="col-md-6">
           Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.[1] The term implies a look defined by the fashion industry as that which is trending. Everything that is considered fashion is available and popularized by the fashion system (industry and media).
           <br class="my-2"/>
@@ -38,15 +38,49 @@
 
       </div>
     </div>
+    <!--  -->
+    <div class="container py-4 ps-5 pe-4">
+      <div class="mb-4 d-flex">
+        <h1>All Products</h1>
+        <div class="d-flex align-items-center ms-auto">
+            <div class="cir-outli">
+           <div class="circle"><i class="fa-solid ms-1 fa-arrow-right fa-3x"></i></div></div>
+           <!-- <p class="ms-4">Discover More</p> -->
+           </div>
+      </div>
+      <!-- <div class="row g-4">
+        <div class="col-md-4">
+           <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`" :description="`Something is here`" />
+        </div>
+        <div class="col-md-4">
+           <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`" :description="`Something is here`" />
+        </div>
+        <div class="col-md-4">
+           <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`" :description="`Something is here`" />
+        </div>
+        <div class="col-md-4">
+           <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/1485781/pexels-photo-1485781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`" :description="`Something is here`" />
+        </div>
+        <div class="col-md-4">
+           <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/247204/pexels-photo-247204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`" :description="`Something is here`" />
+        </div>
+        <div class="col-md-4">
+           <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600`" :description="`Something is here`" />
+        </div>
+      </div> -->
+      <card-comp/>
+    </div>
   </div>
 </template>
 
 <script>
   import NavBar from '@/components/NavBar.vue'
   import HeroSection from '@/components/HeroSection.vue'
+  import CardComp from '@/components/CardComp.vue'
+  // import Vuesax from '@/components/Vuesax.vue'
 export default {
    name: 'HomeView',
-   components : {NavBar,HeroSection}
+   components : {NavBar,HeroSection,CardComp}
 }
 </script>
 
@@ -70,5 +104,34 @@ export default {
   width: 250px;
   height: 150px;
   object-fit: cover;
+}
+h1{
+  font-weight: 600;
+}
+.fa-arrow-right{
+  color: white;
+  font-weight: 12px !important;
+}
+.cir-outli{
+  width: 60px;
+  height: 60px;
+  border: 2px solid #963515 ;
+  border-radius: 50%;
+}
+.circle{
+
+  width: 53px;
+  height: 52px;
+  background-color: #963515;
+  border-radius: 50%;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  transition: all 1s;
+}
+.circle:hover{
+  position: relative;
+  left: 20px;
+  cursor: pointer;
 }
 </style>
