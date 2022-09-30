@@ -41,7 +41,7 @@
     <!--  -->
     <div class="container py-4 ps-5 pe-4">
       <div class="mb-4 d-flex">
-        <h1>All Products</h1>
+        <h1>For Mens</h1>
         <div class="d-flex align-items-center ms-auto">
             <div class="cir-outli">
            <div class="circle"><i class="fa-solid ms-1 fa-arrow-right fa-3x"></i></div></div>
@@ -68,8 +68,18 @@
            <card-comp :title="`Mynew Outfit`" :image="`https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600`" :description="`Something is here`" />
         </div>
       </div> -->
-      <card-comp/>
-    </div>
+       <div class="row g-4">
+         <div class="col-md-4" v-for="(item,index) in allProducts" :key="index">
+            <card-comp :title="item.title " :image="item.image" :description="item.description.substring(0,10) + '...'" />
+         </div>
+       </div>
+      <!-- FOr Mens Item List -->
+      <div class="row g-4">
+        <div class="col-md-4">
+
+        </div>
+      </div>
+      </div>
   </div>
 </template>
 
@@ -77,11 +87,36 @@
   import NavBar from '@/components/NavBar.vue'
   import HeroSection from '@/components/HeroSection.vue'
   import CardComp from '@/components/CardComp.vue'
+  import axios from 'axios';
   // import Vuesax from '@/components/Vuesax.vue'
 export default {
    name: 'HomeView',
-   components : {NavBar,HeroSection,CardComp}
+   components : {NavBar,HeroSection,CardComp},
+   data(){
+    return{
+        allProducts: []
+    }
+  },
+  mounted(){
+    this.getAllProducts()
+  },
+//   props: ['title','image','description']
+ methods: {
+  async  getAllProducts(){
+        try{
+          let response = await axios.get("https://fakestoreapi.com/products/category/men's clothing")
+          if(response.status == 200){
+            console.warn(response.data)
+            this.allProducts = response.data
+          }
+        }
+        catch(e){
+            console.warn(e.toString());
+        }
+    }
+ }
 }
+
 </script>
 
 <style scoped>
