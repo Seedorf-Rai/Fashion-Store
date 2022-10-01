@@ -4,15 +4,15 @@
         <div class="col-md-4" v-for="(item,index) in allProducts" :key="index"> -->
             <vs-card type="2">
     <template #title>
-      <h3>{{ title }}</h3>
+      <h3 class="card-title">{{ title }}</h3>
     </template>
     <template #img>
-      <img :src="image" alt="">
+      <img :src="image" class="card-img" alt="">
     </template>
     <template #text>
       <p>
         <!-- {{ item.description.substring(0,8) + '...'}} -->
-        {{ description }}
+
       </p>
     </template>
     <template #interactions>
@@ -34,5 +34,12 @@ export default {
 </script>
 
 <style>
-
+.card-img{
+  width: 200px !important;
+  height: 250px !important;
+  object-fit: cover;
+}
+/* .card-title{
+  color: #963515;
+} */
 </style>

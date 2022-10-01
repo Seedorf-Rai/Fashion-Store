@@ -67,7 +67,7 @@
     <div class="container py-4 ps-5 pe-4">
       <div class="mb-4 d-flex">
         <!-- FOr Mens Item List -->
-        <h1>For Mens</h1>
+        <h2>For Mens</h2>
         <div class="d-flex align-items-center ms-auto">
           <div class="cir-outli">
             <div class="circle">
@@ -88,7 +88,7 @@
       </div>
       <div class="mb-4 d-flex">
         <!-- FOr Mens Item List -->
-        <h1>For Women's</h1>
+        <h2>For Women's</h2>
         <div class="d-flex align-items-center ms-auto">
           <div class="cir-outli">
             <div class="circle">
@@ -99,8 +99,51 @@
         </div>
       </div>
       <!-- For Women's Item List -->
-      <div class="row g-4">
+      <div class="row mb-5 g-4">
         <div class="col-md-4" v-for="(item, index) in getWomen.slice(0,3)" :key="index">
+          <card-comp
+            :title="item.title"
+            :image="item.image"
+            :description="item.description.substring(0, 10) + '...'"
+          />
+        </div>
+      </div>
+      <!-- Accessories -->
+      <div class="mb-4 d-flex">
+        <!-- FOr Mens Item List -->
+        <h2>Check Out Jeweleries</h2>
+        <div class="d-flex align-items-center ms-auto">
+          <div class="cir-outli">
+            <div class="circle">
+              <i class="fa-solid ms-1 fa-arrow-right fa-3x"></i>
+            </div>
+          </div>
+          <!-- <p class="ms-4">Discover More</p> -->
+        </div>
+      </div>
+      <div class="row mb-4 g-4">
+        <div class="col-md-4" v-for="(item, index) in getAccess.slice(0,3)" :key="index">
+          <card-comp
+            :title="item.title"
+            :image="item.image"
+            :description="item.description.substring(0, 10) + '...'"
+          />
+        </div>
+      </div>
+      <div class="mb-4 d-flex">
+        <!-- FOr Mens Item List -->
+        <h2>Check Out Accessories</h2>
+        <div class="d-flex align-items-center ms-auto">
+          <div class="cir-outli">
+            <div class="circle">
+              <i class="fa-solid ms-1 fa-arrow-right fa-3x"></i>
+            </div>
+          </div>
+          <!-- <p class="ms-4">Discover More</p> -->
+        </div>
+      </div>
+      <div class="row mb-4 g-4">
+        <div class="col-md-4" v-for="(item, index) in getJewel.slice(0,3)" :key="index">
           <card-comp
             :title="item.title"
             :image="item.image"
@@ -125,11 +168,15 @@ export default {
     return {
       allProducts: [],
       getWomen: [],
+      getAccess: [],
+      getJewel: [],
     };
   },
   mounted() {
     this.getAllProducts();
     this.getWomenProducts();
+    this.getAccessories();
+    this.getJewelery();
   },
   //   props: ['title','image','description']
   methods: {
@@ -159,6 +206,30 @@ export default {
         console.warn(e.toString());
       }
     },
+    async getAccessories() {
+      try{
+      let response = await axios.get('https://fakestoreapi.com/products/category/jewelery')
+      if(response.status == 200){
+        console.warn(response.data)
+        this.getAccess = response.data
+      }
+      }
+      catch (e) {
+        console.warn(e.toString());
+      }
+    },
+    async getJewelery() {
+      try{
+      let response = await axios.get('https://fakestoreapi.com/products/category/electronics')
+      if(response.status == 200){
+        console.warn(response.data)
+        this.getJewel = response.data
+      }
+      }
+      catch (e) {
+        console.warn(e.toString());
+      }
+    }
   },
 };
 </script>
@@ -183,9 +254,6 @@ export default {
   width: 250px;
   height: 150px;
   object-fit: cover;
-}
-h1 {
-  font-weight: 600;
 }
 .fa-arrow-right {
   color: white;
