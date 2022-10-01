@@ -152,6 +152,8 @@
         </div>
       </div>
     </div>
+    <!-- Footer -->
+    <footer-comp/>
   </div>
 </template>
 
@@ -160,10 +162,11 @@ import NavBar from "@/components/NavBar.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import CardComp from "@/components/CardComp.vue";
 import axios from "axios";
+import FooterComp from "@/components/FooterComp.vue";
 // import Vuesax from '@/components/Vuesax.vue'
 export default {
   name: "HomeView",
-  components: { NavBar, HeroSection, CardComp },
+  components: { NavBar, HeroSection, CardComp,FooterComp },
   data() {
     return {
       allProducts: [],
