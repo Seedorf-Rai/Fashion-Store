@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="row mb-5 g-4">
-        <div class="col-md-4" v-for="(item, index) in allProducts" :key="index">
+        <div class="col-md-4" v-for="(item, index) in allProducts.slice(0,3)" :key="index">
           <card-comp
             :title="item.title"
             :image="item.image"
@@ -98,8 +98,9 @@
           <!-- <p class="ms-4">Discover More</p> -->
         </div>
       </div>
+      <!-- For Women's Item List -->
       <div class="row g-4">
-        <div class="col-md-4" v-for="(item, index) in getWomen" :key="index">
+        <div class="col-md-4" v-for="(item, index) in getWomen.slice(0,3)" :key="index">
           <card-comp
             :title="item.title"
             :image="item.image"
@@ -123,12 +124,12 @@ export default {
   data() {
     return {
       allProducts: [],
-      getWomen: []
+      getWomen: [],
     };
   },
   mounted() {
     this.getAllProducts();
-    this.getWomenProducts()
+    this.getWomenProducts();
   },
   //   props: ['title','image','description']
   methods: {
@@ -145,18 +146,19 @@ export default {
         console.warn(e.toString());
       }
     },
-    async getWomenProducts(){
-      try{
-        let response = await axios.get("https://fakestoreapi.com/products/category/women's%20clothing")
-        if(response.status == 200){
-          console.warn("response.data")
-          this.getWomen = response.data
+    async getWomenProducts() {
+      try {
+        let response = await axios.get(
+          "https://fakestoreapi.com/products/category/women's%20clothing"
+        );
+        if (response.status == 200) {
+          console.warn("response.data");
+          this.getWomen = response.data;
         }
-      }
-      catch (e) {
+      } catch (e) {
         console.warn(e.toString());
       }
-    }
+    },
   },
 };
 </script>
