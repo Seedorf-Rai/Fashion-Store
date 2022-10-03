@@ -161,8 +161,8 @@
 import NavBar from "@/components/NavBar.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import CardComp from "@/components/CardComp.vue";
-import axios from "axios";
 import FooterComp from "@/components/FooterComp.vue";
+import instance from '@/config'
 // import Vuesax from '@/components/Vuesax.vue'
 export default {
   name: "HomeView",
@@ -185,9 +185,7 @@ export default {
   methods: {
     async getAllProducts() {
       try {
-        let response = await axios.get(
-          "https://fakestoreapi.com/products/category/men's clothing"
-        );
+        let response = await instance.get("products/category/men's clothing")
         if (response.status == 200) {
           console.warn(response.data);
           this.allProducts = response.data;
@@ -198,8 +196,8 @@ export default {
     },
     async getWomenProducts() {
       try {
-        let response = await axios.get(
-          "https://fakestoreapi.com/products/category/women's%20clothing"
+        let response = await instance.get(
+          "/products/category/women's%20clothing"
         );
         if (response.status == 200) {
           console.warn("response.data");
@@ -211,7 +209,7 @@ export default {
     },
     async getAccessories() {
       try{
-      let response = await axios.get('https://fakestoreapi.com/products/category/jewelery')
+      let response = await instance.get('products/category/jewelery')
       if(response.status == 200){
         console.warn(response.data)
         this.getAccess = response.data
@@ -223,7 +221,7 @@ export default {
     },
     async getJewelery() {
       try{
-      let response = await axios.get('https://fakestoreapi.com/products/category/electronics')
+      let response = await instance.get('products/category/electronics')
       if(response.status == 200){
         console.warn(response.data)
         this.getJewel = response.data
