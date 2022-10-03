@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const instance = axios.create({
-    baseURL: 'https://fakestoreapi.com',
+const category = axios.create({
+    baseURL: 'https://fakestoreapi.com/products/category',
   });
-  export default instance;
+  export default category;

@@ -4,6 +4,7 @@ import router from './router'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import axios from 'axios'
+import store from './store'
 Vue.config.productionTip = false
 Vue.use(axios)
 Vue.use(Vuesax, {
@@ -11,5 +12,6 @@ Vue.use(Vuesax, {
 })
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
