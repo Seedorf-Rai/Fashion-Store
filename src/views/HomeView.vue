@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="row mb-4 g-4">
-        <div class="col-md-4" v-for="(item, index) in getAccess.slice(0,3)" :key="index">
+        <div class="col-md-4" v-for="(item, index) in jewels.slice(0,3)" :key="index">
           <card-comp
             :title="item.title"
             :image="item.image"
@@ -171,46 +171,22 @@ export default {
   computed:{
     ...mapGetters({
       allProducts : 'GET_MEN',
-      allwomen: 'GET_WOMEN'
+      allwomen: 'GET_WOMEN',
+      jewels: 'GET_ACCESS'
     })
   },
   data() {
     return {
-      getAccess: [],
       getJewel: [],
     };
   },
   mounted() {
-    this.getAccessories();
     this.getJewelery();
   },
   //   props: ['title','image','description']
   methods: {
 
-    // async getWomenProducts() {
-    //   try {
-    //     let response = await category.get("women's%20clothing"
-    //     );
-    //     if (response.status == 200) {
-    //       console.warn("response.data");
-    //       this.getWomen = response.data;
-    //     }
-    //   } catch (e) {
-    //     console.warn(e.toString());
-    //   }
-    // },
-    async getAccessories() {
-      try{
-      let response = await category.get('jewelery')
-      if(response.status == 200){
-        console.warn(response.data)
-        this.getAccess = response.data
-      }
-      }
-      catch (e) {
-        console.warn(e.toString());
-      }
-    },
+
     async getJewelery() {
       try{
       let response = await category.get('electronics')

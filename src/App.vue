@@ -9,11 +9,12 @@ import { mapActions } from 'vuex';
 
   export default{
     methods:{
-      ...mapActions(['getAllProducts','getWomen'])
+      ...mapActions(['getAllProducts','getWomen','getAccess'])
     },
     mounted(){
       this.getAllProducts()
       this.getWomen()
+      this.getAccess()
     }
   }
 </script>
