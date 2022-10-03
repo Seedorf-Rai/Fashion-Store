@@ -100,7 +100,7 @@
       </div>
       <!-- For Women's Item List -->
       <div class="row mb-5 g-4">
-        <div class="col-md-4" v-for="(item, index) in getWomen.slice(0,3)" :key="index">
+        <div class="col-md-4" v-for="(item, index) in allwomen.slice(0,3)" :key="index">
           <card-comp
             :title="item.title"
             :image="item.image"
@@ -163,49 +163,42 @@ import HeroSection from "@/components/HeroSection.vue";
 import CardComp from "@/components/CardComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import category from '@/config'
+import { mapGetters } from 'vuex';
 // import Vuesax from '@/components/Vuesax.vue'
 export default {
   name: "HomeView",
   components: { NavBar, HeroSection, CardComp,FooterComp },
+  computed:{
+    ...mapGetters({
+      allProducts : 'GET_MEN',
+      allwomen: 'GET_WOMEN'
+    })
+  },
   data() {
     return {
-      allProducts: [],
-      getWomen: [],
       getAccess: [],
       getJewel: [],
     };
   },
   mounted() {
-    this.getAllProducts();
-    this.getWomenProducts();
     this.getAccessories();
     this.getJewelery();
   },
   //   props: ['title','image','description']
   methods: {
-    async getAllProducts() {
-      try {
-        let response = await category.get("/men's clothing")
-        if (response.status == 200) {
-          console.warn(response.data);
-          this.allProducts = response.data;
-        }
-      } catch (e) {
-        console.warn(e.toString());
-      }
-    },
-    async getWomenProducts() {
-      try {
-        let response = await category.get("women's%20clothing"
-        );
-        if (response.status == 200) {
-          console.warn("response.data");
-          this.getWomen = response.data;
-        }
-      } catch (e) {
-        console.warn(e.toString());
-      }
-    },
+
+    // async getWomenProducts() {
+    //   try {
+    //     let response = await category.get("women's%20clothing"
+    //     );
+    //     if (response.status == 200) {
+    //       console.warn("response.data");
+    //       this.getWomen = response.data;
+    //     }
+    //   } catch (e) {
+    //     console.warn(e.toString());
+    //   }
+    // },
     async getAccessories() {
       try{
       let response = await category.get('jewelery')
