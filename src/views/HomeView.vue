@@ -143,7 +143,7 @@
         </div>
       </div>
       <div class="row mb-4 g-4">
-        <div class="col-md-4" v-for="(item, index) in getJewel.slice(0,3)" :key="index">
+        <div class="col-md-4" v-for="(item, index) in electronics.slice(0,3)" :key="index">
           <card-comp
             :title="item.title"
             :image="item.image"
@@ -162,7 +162,6 @@ import NavBar from "@/components/NavBar.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import CardComp from "@/components/CardComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
-import category from '@/config'
 import { mapGetters } from 'vuex';
 // import Vuesax from '@/components/Vuesax.vue'
 export default {
@@ -172,34 +171,21 @@ export default {
     ...mapGetters({
       allProducts : 'GET_MEN',
       allwomen: 'GET_WOMEN',
-      jewels: 'GET_ACCESS'
+      jewels: 'GET_ACCESS',
+      electronics: 'GET_ELECTS'
     })
   },
   data() {
     return {
-      getJewel: [],
     };
   },
   mounted() {
-    this.getJewelery();
   },
   //   props: ['title','image','description']
   methods: {
 
 
-    async getJewelery() {
-      try{
-      let response = await category.get('electronics')
-      if(response.status == 200){
-        console.warn(response.data)
-        this.getJewel = response.data
-      }
-      }
-      catch (e) {
-        console.warn(e.toString());
-      }
-    }
-  },
+  }
 };
 </script>
 
