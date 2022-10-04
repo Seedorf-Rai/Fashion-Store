@@ -158,7 +158,7 @@
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
+import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection.vue";
 import CardComp from "@/components/CardComp.vue";
 import FooterComp from "@/components/FooterComp.vue";

@@ -1,16 +1,28 @@
 <template>
   <div id="app">
 
-    <router-view/>
+     <div class="loader" v-if="loader == true">
+      <atom-spinner
+          :animation-duration="5000"
+          :size="60"
+          :color="'#963515'"
+     />
+     </div>
+    <router-view v-else />
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
-
+import { mapActions, mapGetters } from 'vuex';
+import {AtomSpinner} from 'epic-spinners'
   export default{
+    
+    components:{AtomSpinner},
     methods:{
       ...mapActions(['getAllProducts','getWomen','getAccess','getElects'])
     },
+    ...mapGetters({
+      loader: 'GET_LOADING'
+    }),
     mounted(){
       this.getAllProducts()
       this.getWomen()
@@ -45,5 +57,13 @@ body{
   font-size: 16px !important;
   font-weight: 450;
   color: #353333 !important;
+}
+.loader{
+  background-color: #E8E3D9;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

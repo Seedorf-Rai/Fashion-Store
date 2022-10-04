@@ -8,6 +8,7 @@ import * as elects from './modules/elect'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  
   modules : {
    men,
    women,

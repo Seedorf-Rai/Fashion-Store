@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="mt-5">
     <div class="container px-5">
       <div class="py-5">
         <div class="d-flex py-4 align-items-center">

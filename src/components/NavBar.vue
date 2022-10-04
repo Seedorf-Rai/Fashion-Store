@@ -18,13 +18,13 @@
         <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <div class="d-flex justify-content-center align-items-center">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" @click.prevent="$router.push({name:'home'})">Home</a>
               <span class="mx-3 fs-3">\</span>
             </div>
           </li>
           <li class="nav-item">
             <div class="d-flex justify-content-center align-items-center">
-              <a class="nav-link active" aria-current="page" href="#">Women</a>
+              <a class="nav-link active" aria-current="page" @click.prevent="$router.push({name:'women'})">Women</a>
               <span class="mx-3 fs-3">\</span>
             </div>
           </li>
@@ -71,5 +71,8 @@ export default {
 <style>
 .navbar-border{
   border-bottom: 2px solid #9a9693;
+}
+.nav-link:hover{
+  cursor: pointer;
 }
 </style>
